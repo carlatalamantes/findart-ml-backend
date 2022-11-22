@@ -8,6 +8,7 @@ colorama==0.4.6
 distlib==0.3.6
 filelock==3.8.0
 Flask==2.2.2
+Flask-Cors==3.0.10
 flatbuffers==22.10.26
 gast==0.4.0
 google-auth==2.14.1
@@ -40,8 +41,9 @@ six==1.16.0
 tensorboard==2.11.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow-cpu==2.11.0
+tensorflow==2.11.0
 tensorflow-estimator==2.11.0
+tensorflow-intel==2.11.0
 tensorflow-io-gcs-filesystem==0.27.0
 termcolor==2.1.1
 typing_extensions==4.4.0
