@@ -53,5 +53,5 @@ def predict_decisiontree():
         else:
             return 'Error: File type not supported'
 
-if __name__ == '__name__':
+if __name__ == '__app__':
   app.run()
