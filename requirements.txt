@@ -55,11 +55,6 @@ pandas==1.5.1
 Pillow==9.3.0
 pipenv==2022.11.11
 platformdirs==2.5.4
-<<<<<<< HEAD
-=======
-proto-plus==1.22.1
-protobuf==4.21.9
->>>>>>> 2e2c923f551a54bca9d90c060bd3ffd34cea6b1e
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.21
