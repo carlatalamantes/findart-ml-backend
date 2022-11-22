@@ -15,7 +15,6 @@ import pandas as pd
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 UPLOAD_FOLDER = 'picture'
 
-
 def return_image_embedding(img_path):
     model = ResNet50(include_top=False, weights='imagenet', pooling='avg')
     img = image.load_img(img_path, target_size=(224, 224))
