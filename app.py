@@ -14,7 +14,6 @@ import pandas as pd
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 UPLOAD_FOLDER = 'picture'
-MYDIR = os.path.dirname(__file__)
 
 def return_image_embedding(img_path):
     model = ResNet50(include_top=False, weights='imagenet', pooling='avg')
@@ -28,7 +27,7 @@ def return_image_embedding(img_path):
 
 def save_image(image):
     filename = secure_filename(image.filename)
-    image.save(os.path.join(MYDIR + "/" + app.config['UPLOAD_FOLDER'], filename))
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
