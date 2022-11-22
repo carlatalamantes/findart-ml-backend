@@ -69,21 +69,5 @@ def predict_randomforest():
         else:
             return 'Error: File type not supported'
 
-@app.route("/svc", methods=['POST'])
-def predict_svc():
-    if request.method == "POST":
-        if 'file' not in request.files:
-            return 'Error: No file part'
-        image = request.files['file']
-        if(image.filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS):
-            save_image(image)
-            img_path = os.path.realpath(app.config['UPLOAD_FOLDER']+'/'+image.filename)
-            nueva = return_image_embedding(img_path)
-            model = joblib.load('svc.pkl')
-            prediction = model.predict(nueva)
-            return jsonify({'prediction': str(prediction)})          
-        else:
-            return 'Error: File type not supported'
-
 if __name__ == '__name__':
   app.run()
