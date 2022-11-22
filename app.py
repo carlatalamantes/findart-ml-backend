@@ -13,7 +13,7 @@ import pandas as pd
 
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-UPLOAD_FOLDER = 'picture'
+UPLOAD_FOLDER = '/tmp/'
 
 def return_image_embedding(img_path):
     model = ResNet50(include_top=False, weights='imagenet', pooling='avg')
@@ -43,9 +43,8 @@ def predict_decisiontree():
             return 'Error: No file part'
         image = request.files['file']
         if(image.filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS):
-            #save_image(image)
-            #img_path = os.path.realpath(app.config['UPLOAD_FOLDER']+'/'+image.filename)
-            img_path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg/150px-Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg'
+            save_image(image)
+            img_path = os.path.realpath(app.config['UPLOAD_FOLDER']+'/'+image.filename)
             nueva = return_image_embedding(img_path)
             model = joblib.load('decisiontree.pkl')
             prediction = model.predict(nueva)
